@@ -1,3 +1,9 @@
 {
-  "gitLfs": true
+  "version": 2,
+  "gitLfs": true,
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/index_zh.html", "dest": "/index_zh.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
