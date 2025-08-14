@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神堡 (SHEN) | 源流有序，链上铸成</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Cormorant Garamond', 'Noto Sans SC', serif;
+        }
+        /* Use Inter font specifically for the countdown numbers */
+        .countdown-number {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700; /* Bold */
+        }
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.6) 100%);
+        }
+        .glass-card {
+            background: rgba(23, 23, 23, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .shine-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: left 0.75s;
+        }
+        .shine-effect:hover::before {
+            left: 150%;
+        }
+        .roadmap-line::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(-50%);
+        }
+        .roadmap-dot {
+            background-color: #0a0a0a;
+            border: 2px solid #D946EF; /* Fuchsia-500 */
+            box-shadow: 0 0 15px #D946EF;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="font-display text-2xl font-bold text-white">神堡</span>
+                <span class="font-display text-2xl font-semibold text-white">SHEN</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-gray-300 hover:text-white transition-colors">English</a>
+                <a href="https://sun.io/" target="_blank" class="hidden md:inline-block bg-fuchsia-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors duration-300">
+                    前往 SunPump
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex items-center justify-center">
+            <video id="hero-video" autoplay loop muted playsinline poster="assets/rukiln-wash.jpg">
+                <source src="assets/historianintro.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="relative text-center text-white max-w-4xl mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight font-display">源流有序,</h1>
+                <h1 class="text-5xl md:text-7xl font-bold text-fuchsia-400 font-display">链上铸成.</h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    神堡 (SHEN) 融合了模因币的文化爆发力与世界级博物馆馆藏的庄重与安全。由真实、可考的传世珍品提供价值支撑。
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-semibold font-display tracking-wide">公平启动倒计时</h2>
+                    <div id="countdown" class="flex justify-center gap-4 md:gap-8 mt-4 text-left">
+                        <div class="glass-card p-4 rounded-lg w-24">
+                            <span id="days" class="block text-4xl md:text-5xl countdown-number">--</span>
+                            <span class="text-sm text-gray-400">天</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg w-24">
+                            <span id="hours" class="block text-4xl md:text-5xl countdown-number">--</span>
+                            <span class="text-sm text-gray-400">小时</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg w-24">
+                            <span id="minutes" class="block text-4xl md:text-5xl countdown-number">--</span>
+                            <span class="text-sm text-gray-400">分钟</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg w-24">
+                            <span id="seconds" class="block text-4xl md:text-5xl countdown-number">--</span>
+                            <span class="text-sm text-gray-400">秒</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mt-12">
+                    <a href="https://sun.io/" target="_blank" class="shine-effect relative inline-block bg-fuchsia-600 text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-fuchsia-700 transition-all duration-300 transform hover:scale-105">
+                        在 SunPump 准备启动
+                    </a>
+                    <p class="mt-4 text-sm text-gray-400">100% 公平启动，通过联合曲线模式。无预售，无私募。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Model Section -->
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display">一种全新的资产类别</h2>
+                    <p class="mt-4 text-lg text-gray-400">我们用一枚代币解决了两大难题：艺术品市场的不透明与流动性匮乏，以及模因币的零内在价值。</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Hard Assets -->
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="text-fuchsia-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-white">硬资产基础</h3>
+                        <p class="mt-2 text-gray-400">SHEN 生态系统构建于超过五亿美元的真实世界资产之上，所有藏品均存放在专业金库并已投保。</p>
+                    </div>
+                    <!-- Card 2: Fair Launch -->
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="text-fuchsia-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-white">100% 公平启动</h3>
+                        <p class="mt-2 text-gray-400">SHEN 将通过 SunPump 联合曲线进行发行。无预售或私募，确保为所有参与者提供一个公平的竞争环境。</p>
+                    </div>
+                    <!-- Card 3: DAO Governance -->
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="text-fuchsia-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-white">去中心化治理</h3>
+                        <p class="mt-2 text-gray-400">最终愿景是让 SHEN 代币持有者作为一个合法合规的去中心化自治组织 (DAO) 来管理藏品及其金库。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JIN AI Section -->
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <span class="text-fuchsia-500 font-semibold">数字世界的鉴定神谕</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">JIN AI 介绍</h2>
+                    <p class="mt-4 text-lg text-gray-400">为解决文物溯源难题，我们开发了 JIN AI——一个多智能体人工智能系统。只有在所有三个智能体达成共识后，一件艺术品才会被接纳进入 SHEN 藏品，并获得最高认证：“神堡认证：甲级源流”。</p>
+                    <div class="mt-8 space-y-4">
+                        <p><strong class="text-white">史官 (The Chronicler):</strong> 交叉引用历史数据、拍卖记录和博物馆档案，构建历史文脉网络。</p>
+                        <p><strong class="text-white">画师 (The Stylus):</strong> 经过数万张认证图像训练的视觉鉴赏家，能识别釉色、器型和艺术风格的微小差异。</p>
+                        <p><strong class="text-white">炼丹 (The Elemental):</strong> 根据特定历史时期的已知材料成分，分析器物的化学指纹。</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="assets/rukiln-wash.jpg" alt="珍稀的宋代汝窑笔洗" class="rounded-2xl shadow-2xl shadow-fuchsia-900/20 w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display">路线图</h2>
+                    <p class="mt-4 text-lg text-gray-400">我们的愿景是创建一个永久、自我维持、由成员治理的文化机构。</p>
+                </div>
+                <div class="mt-16 max-w-3xl mx-auto relative roadmap-line">
+                    <!-- Phase 1 -->
+                    <div class="mb-16 flex items-center w-full">
+                        <div class="w-1/2"></div>
+                        <div class="z-10 flex items-center roadmap-dot rounded-full w-8 h-8">
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-card p-6 rounded-lg">
+                                <p class="text-fuchsia-400 font-semibold">第一阶段：启动 (2025年第三季度)</p>
+                                <p class="mt-2 text-gray-300">在 SunPump 成功执行联合曲线启动，并建立 SHEN 金库。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 2 -->
+                    <div class="mb-16 flex flex-row-reverse items-center w-full">
+                        <div class="w-1/2"></div>
+                        <div class="z-10 flex items-center roadmap-dot rounded-full w-8 h-8">
+                        </div>
+                        <div class="w-1/2 pr-8">
+                            <div class="glass-card p-6 rounded-lg">
+                                <p class="text-fuchsia-400 font-semibold">第二阶段：DAO 组建 (2025年第四季度 - 2026年第一季度)</p>
+                                <p class="mt-2 text-gray-300">在美国怀俄明州正式注册成立 SHEN DAO LLC，并部署链上治理框架。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 3 -->
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2"></div>
+                        <div class="z-10 flex items-center roadmap-dot rounded-full w-8 h-8">
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-card p-6 rounded-lg">
+                                <p class="text-fuchsia-400 font-semibold">第三阶段：拍卖行 (2026年及以后)</p>
+                                <p class="mt-2 text-gray-300">启动 SHEN NFT 拍卖行，作为生态系统的主要应用和通缩引擎。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <p>&copy; 2025 神堡 (SHEN). 保留所有权利。</p>
+            <p class="text-sm mt-2">SHEN 代币是一种实用型代币，并非投资产品。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the date for the launch (YYYY, Month (0-11), Day, Hour, Minute, Second, Timezone)
+            // Using Hong Kong Time (UTC+8)
+            const launchDate = new Date(Date.UTC(2025, 7, 26, 13, 0, 0)); // August is month 7. 9PM HKT is 13:00 UTC.
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = launchDate - now;
+
+                if (diff <= 0) {
+                    daysEl.textContent = '00';
+                    hoursEl.textContent = '00';
+                    minutesEl.textContent = '00';
+                    secondsEl.textContent = '00';
+                    clearInterval(timerInterval);
+                    // Optionally, you can change the text to "Launch is live!"
+                    return;
+                }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                daysEl.textContent = d.toString().padStart(2, '0');
+                hoursEl.textContent = h.toString().padStart(2, '0');
+                minutesEl.textContent = m.toString().padStart(2, '0');
+                secondsEl.textContent = s.toString().padStart(2, '0');
+            }
+
+            const timerInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call
+        });
+    </script>
+</body>
+</html>
