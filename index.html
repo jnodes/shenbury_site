@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHEN | The Art of Provenance, Forged On-Chain</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
 
     <style>
@@ -89,24 +86,34 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <span class="font-display text-2xl font-bold text-white">神堡</span>
+                <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="intense-glow" x="-100%" y="-100%" width="300%" height="300%">
+                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <circle cx="50" cy="50" r="45" fill="#121212" stroke="#c026d3" stroke-width="4" />
+                  <rect x="20" y="47" width="60" height="6" rx="3" fill="#c026d3" filter="url(#intense-glow)" />
+                </svg>
                 <span class="font-display text-2xl font-semibold text-white">SHEN</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="index_zh.html" class="text-gray-300 hover:text-white transition-colors">中文</a>
-                <a href="https://sun.io/" target="_blank" class="hidden md:inline-block bg-fuchsia-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors duration-300">
-                    Go to SunPump
+                <a href="https://pump.fun/" target="_blank" class="hidden md:inline-block bg-fuchsia-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors duration-300">
+                    Go to Pump.fun
                 </a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero-bg min-h-screen flex items-center justify-center">
             <video id="hero-video" autoplay loop muted playsinline poster="assets/rukiln-wash.jpg">
                 <source src="assets/historianintro.mp4" type="video/mp4">
@@ -117,10 +124,9 @@
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight">The Art of Provenance,</h1>
                 <h1 class="text-5xl md:text-7xl font-bold text-fuchsia-400">Forged On-Chain.</h1>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    SHEN combines the explosive cultural energy of a meme coin with the gravitas and security of a world-class museum endowment. Backed by real, authenticated artifacts.
+                    SHEN combines the explosive, degen-fueled energy of a Solana meme coin with the gravitas and security of a world-class museum endowment.
                 </p>
                 
-                <!-- Countdown Timer -->
                 <div class="mt-12">
                     <h2 class="text-2xl font-semibold font-display tracking-wide">Fair Launch Begins In</h2>
                     <div id="countdown" class="flex justify-center gap-4 md:gap-8 mt-4 text-left">
@@ -143,17 +149,15 @@
                     </div>
                 </div>
 
-                <!-- CTA Button -->
                 <div class="mt-12">
-                    <a href="https://sun.io/" target="_blank" class="shine-effect relative inline-block bg-fuchsia-600 text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-fuchsia-700 transition-all duration-300 transform hover:scale-105">
-                        Prepare for Launch on SunPump
+                    <a href="https://pump.fun/" target="_blank" class="shine-effect relative inline-block bg-fuchsia-600 text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-fuchsia-700 transition-all duration-300 transform hover:scale-105">
+                        Launch on Pump.fun
                     </a>
                     <p class="mt-4 text-sm text-gray-400">100% Fair Launch via Bonding Curve. No presales. No private investors.</p>
                 </div>
             </div>
         </section>
 
-        <!-- The Model Section -->
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -161,23 +165,20 @@
                     <p class="mt-4 text-lg text-gray-400">We solved two problems with one token. The opaque, illiquid art market and the zero-intrinsic-value meme coin market.</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
-                    <!-- Card 1: Hard Assets -->
                     <div class="glass-card p-8 rounded-2xl">
                         <div class="text-fuchsia-500 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
                         <h3 class="text-2xl font-bold font-display text-white">Hard Asset Foundation</h3>
-                        <p class="mt-2 text-gray-400">The SHEN ecosystem is built on a foundation of over $500M of real-world, physically vaulted, and insured imperial artifacts.</p>
+                        <p class="mt-2 text-gray-400">The SHEN ecosystem is built upon a permanent, physical collection that never moves, providing an unparalleled foundation of stability.</p>
                     </div>
-                    <!-- Card 2: Fair Launch -->
                     <div class="glass-card p-8 rounded-2xl">
                         <div class="text-fuchsia-500 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                         </div>
                         <h3 class="text-2xl font-bold font-display text-white">100% Fair Launch</h3>
-                        <p class="mt-2 text-gray-400">SHEN will launch via a SunPump bonding curve. No presales or private allocations ensures a level playing field for all participants.</p>
+                        <p class="mt-2 text-gray-400">SHEN will launch on Pump.fun via a bonding curve. No presales or private allocations ensures a level playing field for all participants.</p>
                     </div>
-                    <!-- Card 3: DAO Governance -->
                     <div class="glass-card p-8 rounded-2xl">
                         <div class="text-fuchsia-500 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -189,7 +190,6 @@
             </div>
         </section>
 
-        <!-- JIN AI Section -->
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
@@ -202,13 +202,38 @@
                         <p><strong class="text-white">炼丹 Liandān (The Elemental):</strong> Analyzes the chemical fingerprint of an object against known historical material compositions.</p>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <img src="assets/rukiln-wash.jpg" alt="A rare Song Dynasty Ru Kiln Washer" class="rounded-2xl shadow-2xl shadow-fuchsia-900/20 w-full">
+                <div class="md:w-1/2 flex justify-center items-center p-8">
+                    <div class="max-w-sm">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <filter id="intense-glow-jin" x="-100%" y="-100%" width="300%" height="300%">
+                              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                              <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                              </feMerge>
+                            </filter>
+                          </defs>
+                          <circle cx="50" cy="50" r="45" fill="#121212" stroke="#c026d3" stroke-width="4" />
+                          <rect x="20" y="47" width="60" height="6" rx="3" fill="#c026d3" filter="url(#intense-glow-jin)" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold font-display">Read the Whitepaper</h2>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Discover the full vision, tokenomics, and legal structure of the SHEN ecosystem.</p>
+                <div class="mt-8">
+                    <a href="#" target="_blank" class="shine-effect relative inline-block bg-transparent border-2 border-fuchsia-500 text-fuchsia-400 font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-fuchsia-500 hover:text-white transition-all duration-300">
+                        View Whitepaper
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Roadmap Section -->
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -216,7 +241,6 @@
                     <p class="mt-4 text-lg text-gray-400">Our vision is to create a permanent, self-sustaining, and member-governed cultural institution.</p>
                 </div>
                 <div class="mt-16 max-w-3xl mx-auto relative roadmap-line">
-                    <!-- Phase 1 -->
                     <div class="mb-16 flex items-center w-full">
                         <div class="w-1/2"></div>
                         <div class="z-10 flex items-center roadmap-dot rounded-full w-8 h-8">
@@ -224,11 +248,10 @@
                         <div class="w-1/2 pl-8">
                             <div class="glass-card p-6 rounded-lg">
                                 <p class="text-fuchsia-400 font-semibold">Phase I: The Launch (Q3 2025)</p>
-                                <p class="mt-2 text-gray-300">Successful bonding curve launch on SunPump and establishment of the SHEN Treasury.</p>
+                                <p class="mt-2 text-gray-300">Successful bonding curve launch on Pump.fun and establishment of the SHEN Treasury.</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Phase 2 -->
                     <div class="mb-16 flex flex-row-reverse items-center w-full">
                         <div class="w-1/2"></div>
                         <div class="z-10 flex items-center roadmap-dot rounded-full w-8 h-8">
@@ -240,7 +263,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Phase 3 -->
                     <div class="flex items-center w-full">
                         <div class="w-1/2"></div>
                         <div class="z-10 flex items-center roadmap-dot rounded-full w-8 h-8">
@@ -258,7 +280,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-white/10 mt-20">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
             <p>&copy; 2025 SHEN. All rights reserved.</p>
@@ -269,8 +290,7 @@
     <script>
         // Countdown Timer Logic
         document.addEventListener('DOMContentLoaded', () => {
-            // Set the date for the launch (YYYY, Month (0-11), Day, Hour, Minute, Second, Timezone)
-            // Using Hong Kong Time (UTC+8)
+            // Set the date for the launch (YYYY, Month (0-11), Day, Hour, Minute, Second)
             const launchDate = new Date(Date.UTC(2025, 7, 26, 13, 0, 0)); // August is month 7. 9PM HKT is 13:00 UTC.
 
             const daysEl = document.getElementById('days');
@@ -288,7 +308,6 @@
                     minutesEl.textContent = '00';
                     secondsEl.textContent = '00';
                     clearInterval(timerInterval);
-                    // Optionally, you can change the text to "Launch is live!"
                     return;
                 }
 
