@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RU | 古老艺术. 现代模因.</title>
+    <title>徽宗: 皇帝的模因</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -11,14 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗿</text></svg>">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <style>
         /* Custom styles to complement Tailwind */
         body {
             font-family: 'Noto Sans SC', 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e5e5e5;
+            background-color: #121212;
+            color: #F5F5F5;
         }
         h1, h2, h3, .font-display {
             font-family: 'Cormorant Garamond', 'Noto Sans SC', serif;
@@ -38,6 +38,7 @@
             z-index: -1;
             transform: translateX(-50%) translateY(-50%);
             background-size: cover;
+            opacity: 0.5; /* Soften the video */
         }
         .hero-overlay {
             position: absolute;
@@ -45,13 +46,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.6) 100%);
+            background: linear-gradient(to top, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.8) 50%, rgba(18, 18, 18, 0.4) 100%);
         }
         .glass-card {
-            background: rgba(23, 23, 23, 0.6);
+            background-color: rgba(26, 26, 26, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
         }
         .shine-effect::before {
             content: '';
@@ -60,38 +61,42 @@
             left: -150%;
             width: 75%;
             height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
             transform: skewX(-25deg);
             transition: left 0.75s;
         }
         .shine-effect:hover::before {
             left: 150%;
         }
+        /* New Color Palette from Infographic */
+        .brand-violet { color: #A78BFA; }
+        .bg-brand-violet { background-color: #A78BFA; }
+        .hover\:bg-brand-violet-dark:hover { background-color: #8b72d8; }
+        .text-shadow-glow { text-shadow: 0 0 15px rgba(167, 139, 250, 0.6); }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="fixed top-0 left-0 right-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <filter id="intense-glow-zh" x="-100%" y="-100%" width="300%" height="300%">
-                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <circle cx="50" cy="50" r="45" fill="#121212" stroke="#c026d3" stroke-width="4" />
-                  <rect x="20" y="47" width="60" height="6" rx="3" fill="#c026d3" filter="url(#intense-glow-zh)" />
-                </svg>
-                <span class="font-display text-2xl font-semibold text-white">$RU</span>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="48" fill="#1A1A1A" stroke="#A78BFA" stroke-width="2.5" />
+                      <text x="50" y="62" 
+                            font-family="serif, 'KaiTi', 'STKaiti'" 
+                            font-size="40" 
+                            fill="#F5F5F5" 
+                            text-anchor="middle">
+                        徽宗
+                      </text>
+                    </svg>
+                </div>
+                <span class="font-display text-2xl font-semibold text-white">$HUIZONG</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="index.html" class="text-gray-300 hover:text-white transition-colors">English</a>
-                <a href="https://pump.fun/" target="_blank" class="hidden md:inline-block bg-fuchsia-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors duration-300">
+                <a href="https://pump.fun/" target="_blank" class="hidden md:inline-block bg-brand-violet text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-violet-dark transition-colors duration-300">
                     前往 Pump.fun
                 </a>
             </div>
@@ -106,17 +111,17 @@
             </video>
             <div class="hero-overlay"></div>
             <div class="relative text-center text-white max-w-4xl mx-auto px-6">
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight font-display">古老艺术.</h1>
-                <h1 class="text-5xl md:text-7xl font-bold text-fuchsia-400 font-display">现代模因.</h1>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight text-shadow-glow brand-violet">徽宗</h1>
+                <h2 class="text-3xl md:text-4xl font-bold font-display mt-2">皇帝的模因</h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    这不是一家公司。这是一场由第一个拥有灵魂的模因币推动的文化运动。献给那些厌倦了毫无价值的阿猫阿狗的堕落者。
+                    我们持有他的遗物。你持有他的代币。这是新的王朝。 一场文化叛乱，献给想要获得真正帝国一角的堕落者。
                 </p>
                 
                 <div class="mt-12">
-                    <a href="https://pump.fun/" target="_blank" class="shine-effect relative inline-block bg-fuchsia-600 text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-fuchsia-700 transition-all duration-300 transform hover:scale-105">
+                    <a href="https://pump.fun/" target="_blank" class="shine-effect relative inline-block bg-brand-violet text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-brand-violet-dark transition-all duration-300 transform hover:scale-105">
                         在 Pump.fun 启动
                     </a>
-                    <p class="mt-4 text-sm text-gray-400">100% 公平启动。无预售。无团队代币。</p>
+                    <p class="mt-4 text-sm text-gray-400">100% 公平启动。无预售。无VC。无团队代币。</p>
                 </div>
             </div>
         </section>
@@ -124,20 +129,20 @@
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-fuchsia-500 font-semibold">JIN的档案</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">陶瓷地板价： >$1亿美金</h2>
-                    <p class="mt-4 text-lg text-gray-400">$RU的传奇根植于陶瓷史上最令人垂涎的两件器物。它们的价值并非凭空而来，而是源于无与伦比的稀有性、皇室的传承以及千年来令帝王与鉴赏家为之倾倒的审美品质。理解了这一点，你便能领会我们这场运动的灵魂。</p>
+                    <span class="brand-violet font-semibold">传奇</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">陶瓷地板价</h2>
+                    <p class="mt-4 text-lg text-gray-400">你的土狗币灵感来自一条推文。我们的模因灵感来自一个帝国王朝。 这不是估值。这是皇帝品味的证明。我们将请一位历史学家用中文直播，只为解释这些经过审计的作品是多么不可能的稀有。这才是真正的阿尔法。</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-2 gap-8">
                     <div class="glass-card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold font-display text-white">创世遗物：汝窑笔洗</h3>
-                        <p class="mt-2 text-fuchsia-400 font-semibold">市场价值 (苏富比同类品): $3,770万美金</p>
-                        <p class="mt-4 text-gray-400">汝窑的烧造仅持续了区区二十年，且专为北宋宫廷御用。存世的认证真品不足百件，比伦勃朗的画作还要稀有。这件笔洗——用于涮洗毛笔的器皿——体现了宋代美学的巅峰：其器形简约而完美，标志性的“雨过天青”釉色，是意图将天堂复刻于人间的尝试。釉面上微妙而不规则的“开片”，以及器物底部微小的“芝麻钉”支烧痕迹，都是失传已久的宫廷工艺的标志，使其成为全世界最受追捧的器物之一。</p>
+                        <h3 class="text-2xl font-bold font-display text-white">创世遗物</h3>
+                        <p class="mt-2 brand-violet font-semibold">汝窑葵花形笔洗</p>
+                        <p class="mt-4 text-gray-400">一件类似的作品在苏富比拍卖行以3770万美元成交。那不是价格标签；那是一个世界纪录，证明了皇帝的品味千年来回响不绝。在仅存在了二十年的秘密窑炉中锻造，汝窑是地球上最稀有的陶瓷。存世不足百件。这不仅仅是陶器；它是一个失落世界的碎片，一件纯粹皇权的艺术品。</p>
                     </div>
                     <div class="glass-card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold font-display text-white">千兆地板：汝窑葫芦瓶</h3>
-                        <p class="mt-2 text-fuchsia-400 font-semibold">估价：$6,500万美金+</p>
-                        <p class="mt-4 text-gray-400">如果说笔洗是杰作，那么葫芦瓶则近乎神话。已知存世仅六件，其稀有性无出其右。葫芦器形本身在道教中是强大的象征，与长生不老和疗愈相关。对于帝王而言，一件以此为形、并用有史以来最珍贵的陶瓷烧造的器皿，已超越艺术品范畴——它是一件精神上的法器。其价值不仅源于稀有，更来自其深厚的文化共鸣，以及与皇室精神信仰的直接联系。它代表了艺术完美与神话力量的终极融合。</p>
+                        <h3 class="text-2xl font-bold font-display text-white">终极BOSS</h3>
+                        <p class="mt-2 brand-violet font-semibold">汝窑葫芦瓶</p>
+                        <p class="mt-4 text-gray-400">已知存世仅六件。再读一遍。这不是稀有；这是一个统计上的异常。葫芦是道教中长生的象征，由一位痴迷于神性的皇帝委托制作。这个瓶子不仅仅是为了展示；它是一件精神武器，一个盛放仙丹的容器，一种宇宙级的炫耀。拥有它的数字孪生，就是拥有那个神话的一部分。</p>
                     </div>
                 </div>
             </div>
@@ -146,25 +151,21 @@
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <span class="text-fuchsia-500 font-semibold">吉祥物</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">JIN, 人工智能历史学家</h2>
-                    <p class="mt-4 text-lg text-gray-400">我们的运动由JIN机器人领导。但JIN不仅仅是一个吉祥物。它是一位人工智能历史学家，一个数字神谕，专注于一个单一的焦点：北宋（公元960-1127年），传说中的汝窑运营的时代。</p>
-                    <p class="mt-4 text-lg text-gray-400">JIN的使命是教育社区，阐明我们遗物的巨大文化价值。当JIN说话时，你要听。</p>
+                    <span class="brand-violet font-semibold">皇帝</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">艺术家皇帝，徽宗</h2>
+                    <p class="mt-4 text-lg text-gray-400">忘了那些匿名的开发者吧。我们的创始人是徽宗皇帝。一位书法家、画家、音乐家，以及一位耗尽国库以追求世间最美艺术的无情堕落者。他不仅仅是统治一个王朝；他是在策展一个王朝。我们是他遗产的守护者，而$HUIZONG是他新的数字帝国的代币。</p>
                 </div>
                 <div class="md:w-1/2 flex justify-center items-center p-8">
-                    <div class="max-w-sm">
+                    <div class="max-w-xs">
                         <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                          <defs>
-                            <filter id="intense-glow-jin-zh" x="-100%" y="-100%" width="300%" height="300%">
-                              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                              <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                              </feMerge>
-                            </filter>
-                          </defs>
-                          <circle cx="50" cy="50" r="45" fill="#121212" stroke="#c026d3" stroke-width="4" />
-                          <rect x="20" y="47" width="60" height="6" rx="3" fill="#c026d3" filter="url(#intense-glow-jin-zh)" />
+                          <circle cx="50" cy="50" r="48" fill="#1A1A1A" stroke="#A78BFA" stroke-width="2.5" />
+                          <text x="50" y="62" 
+                                font-family="serif, 'KaiTi', 'STKaiti'" 
+                                font-size="40" 
+                                fill="#F5F5F5" 
+                                text-anchor="middle">
+                            徽宗
+                          </text>
                         </svg>
                     </div>
                 </div>
@@ -174,20 +175,20 @@
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl md:text-5xl font-bold font-display">“皇帝的恩惠”</h2>
-                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">这是一场纪念我们第一批信徒的文化活动。这不是经济激励。</p>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">您的皇庭门票。这不是经济激励。这是一场致敬OG的文化盛事。</p>
                 <div class="mt-8 glass-card p-8 rounded-2xl max-w-3xl mx-auto">
-                    <p class="text-lg text-white">前500个在Pump.fun上购买$RU的独立钱包将作为我们的“创始收藏家”永垂不朽。</p>
-                    <p class="mt-4 text-gray-400">这500个钱包将被空投一个特殊的、不可转让的“创始收藏家碎片”NFT，该NFT来自汝窑笔洗的数字孪生。钻石手持有者将获得来自更稀有的葫芦瓶数字孪生的第二次空投。</p>
+                    <p class="text-lg text-white">前500个在Pump.fun上购买$HUIZONG的独立钱包将成为“创始收藏家”。这是一场速通挑战。名额将很快被占满。</p>
+                    <p class="mt-4 text-gray-400">获胜者将获得一枚“收藏家碎片”NFT。持有您的碎片和所有初始购买的$HUIZONG三十天，即可获得第二枚来自更稀有的葫芦瓶数字孪生的碎片。这是终极的炫耀。</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-white/10 mt-20">
+    <footer class="border-t border-gray-800 mt-20">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
-            <p>&copy; 2025 RU. 保留所有权利。</p>
-            <p class="text-sm mt-2">$RU是一种模因币，没有内在价值或财务回报的期望。它仅用于娱乐目的。</p>
+            <p>&copy; 2025 HUIZONG. 保留所有权利。</p>
+            <p class="text-sm mt-2">$HUIZONG是一种模因币，没有内在价值或财务回报的期望。仅供娱乐。</p>
         </div>
     </footer>
     

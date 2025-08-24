@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RU | Ancient Art. Modern Meme.</title>
+    <title>HUIZONG: The Emperor's Meme</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -11,14 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗿</text></svg>">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <style>
         /* Custom styles to complement Tailwind */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e5e5e5;
+            background-color: #121212;
+            color: #F5F5F5;
         }
         h1, h2, h3, .font-display {
             font-family: 'Cormorant Garamond', serif;
@@ -38,6 +38,7 @@
             z-index: -1;
             transform: translateX(-50%) translateY(-50%);
             background-size: cover;
+            opacity: 0.5; /* Soften the video */
         }
         .hero-overlay {
             position: absolute;
@@ -45,13 +46,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.6) 100%);
+            background: linear-gradient(to top, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.8) 50%, rgba(18, 18, 18, 0.4) 100%);
         }
         .glass-card {
-            background: rgba(23, 23, 23, 0.6);
+            background-color: rgba(26, 26, 26, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
         }
         .shine-effect::before {
             content: '';
@@ -60,38 +61,42 @@
             left: -150%;
             width: 75%;
             height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
             transform: skewX(-25deg);
             transition: left 0.75s;
         }
         .shine-effect:hover::before {
             left: 150%;
         }
+        /* New Color Palette from Infographic */
+        .brand-violet { color: #A78BFA; }
+        .bg-brand-violet { background-color: #A78BFA; }
+        .hover\:bg-brand-violet-dark:hover { background-color: #8b72d8; }
+        .text-shadow-glow { text-shadow: 0 0 15px rgba(167, 139, 250, 0.6); }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="fixed top-0 left-0 right-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <filter id="intense-glow" x="-100%" y="-100%" width="300%" height="300%">
-                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <circle cx="50" cy="50" r="45" fill="#121212" stroke="#c026d3" stroke-width="4" />
-                  <rect x="20" y="47" width="60" height="6" rx="3" fill="#c026d3" filter="url(#intense-glow)" />
-                </svg>
-                <span class="font-display text-2xl font-semibold text-white">$RU</span>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="48" fill="#1A1A1A" stroke="#A78BFA" stroke-width="2.5" />
+                      <text x="50" y="62" 
+                            font-family="serif, 'KaiTi', 'STKaiti'" 
+                            font-size="40" 
+                            fill="#F5F5F5" 
+                            text-anchor="middle">
+                        徽宗
+                      </text>
+                    </svg>
+                </div>
+                <span class="font-display text-2xl font-semibold text-white">$HUIZONG</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="index_zh.html" class="text-gray-300 hover:text-white transition-colors">中文</a>
-                <a href="https://pump.fun/" target="_blank" class="hidden md:inline-block bg-fuchsia-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors duration-300">
+                <a href="https://pump.fun/" target="_blank" class="hidden md:inline-block bg-brand-violet text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-violet-dark transition-colors duration-300">
                     Go to Pump.fun
                 </a>
             </div>
@@ -106,17 +111,17 @@
             </video>
             <div class="hero-overlay"></div>
             <div class="relative text-center text-white max-w-4xl mx-auto px-6">
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight">Ancient Art.</h1>
-                <h1 class="text-5xl md:text-7xl font-bold text-fuchsia-400">Modern Meme.</h1>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight text-shadow-glow brand-violet">HUIZONG</h1>
+                <h2 class="text-3xl md:text-4xl font-bold font-display mt-2">The Emperor's Meme</h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    This isn't a company. This is a cultural movement powered by the first meme coin with a soul. For the degen who is tired of worthless dogs and cats.
+                    We hold his relics. You hold his token. This is the new dynasty. A cultural insurgency for the degen who wants a piece of a real empire.
                 </p>
                 
                 <div class="mt-12">
-                    <a href="https://pump.fun/" target="_blank" class="shine-effect relative inline-block bg-fuchsia-600 text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-fuchsia-700 transition-all duration-300 transform hover:scale-105">
+                    <a href="https://pump.fun/" target="_blank" class="shine-effect relative inline-block bg-brand-violet text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-brand-violet-dark transition-all duration-300 transform hover:scale-105">
                         Launch on Pump.fun
                     </a>
-                    <p class="mt-4 text-sm text-gray-400">100% Fair Launch. No Presale. No Team Tokens.</p>
+                    <p class="mt-4 text-sm text-gray-400">100% Fair Launch. No Presale. No VCs. No Team Tokens.</p>
                 </div>
             </div>
         </section>
@@ -124,20 +129,20 @@
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-fuchsia-500 font-semibold">JIN'S ARCHIVE</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">The Ceramic Floor: >$100M</h2>
-                    <p class="mt-4 text-lg text-gray-400">The legend of $RU is anchored by two of the most coveted objects in ceramic history. Their value is not arbitrary; it is a function of unparalleled rarity, imperial provenance, and an aesthetic quality that has captivated emperors and connoisseurs for a millennium. Understand this, and you will understand the soul of our movement.</p>
+                    <span class="brand-violet font-semibold">THE LEGEND</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">The Ceramic Floor</h2>
+                    <p class="mt-4 text-lg text-gray-400">Your dog coin was inspired by a tweet. Our meme is inspired by an imperial dynasty. This isn't a valuation. It's proof of the Emperor's taste. We're bringing in a historian for live streams in Chinese just to explain how impossibly rare these audited pieces are. This is the alpha.</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-2 gap-8">
                     <div class="glass-card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold font-display text-white">The Genesis Relic: Ru Kiln Washer</h3>
-                        <p class="mt-2 text-fuchsia-400 font-semibold">Market Value (Sotheby's Comp): $37.7 Million</p>
-                        <p class="mt-4 text-gray-400">The Ru kilns operated for a mere 20 years, exclusively for the Northern Song imperial court. With fewer than 100 authenticated pieces known to exist, Ru ware is rarer than a Rembrandt. This washer, a vessel for rinsing ink brushes, embodies the pinnacle of Song aesthetics: its shape is simple yet perfect, and its iconic "sky-after-rain" blue-green glaze is an attempt to capture heaven on earth. The subtle, irregular "crackle" in the glaze and the tiny "sesame-seed" spur marks on its base are signatures of a lost imperial technology, making it one of the most sought-after objects in the world.</p>
+                        <h3 class="text-2xl font-bold font-display text-white">The Genesis Relic</h3>
+                        <p class="mt-2 brand-violet font-semibold">Ru Kiln Sunflower-Form Washer</p>
+                        <p class="mt-4 text-gray-400">A similar piece fetched $37.7M at Sotheby's. That's not a price tag; it's a world record that proves the Emperor's taste echoes for a thousand years. Forged in secret kilns that ran for only two decades, Ru ware is the rarest ceramic on earth. Fewer than 100 pieces survived. This isn't just pottery; it's a fragment of a lost world, an artifact of pure, imperial power.</p>
                     </div>
                     <div class="glass-card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold font-display text-white">The Giga-Floor: Ru Kiln Gourd Bottle</h3>
-                        <p class="mt-2 text-fuchsia-400 font-semibold">Estimated Value: $65 Million+</p>
-                        <p class="mt-4 text-gray-400">If the washer is a masterpiece, the gourd bottle is a near-mythical object. With only six of its kind known to exist, its rarity is absolute. The gourd shape itself is a powerful symbol in Daoism, associated with immortality and healing. For the Emperor, a vessel of this form, rendered in the most precious ceramic ever created, was more than art—it was a spiritual talisman. Its value is derived not just from its rarity, but from its profound cultural resonance and its direct connection to the spiritual beliefs of the imperial court. It represents the ultimate fusion of artistic perfection and mythic power.</p>
+                        <h3 class="text-2xl font-bold font-display text-white">The Final Boss</h3>
+                        <p class="mt-2 brand-violet font-semibold">Ru Kiln Gourd Bottle</p>
+                        <p class="mt-4 text-gray-400">One of only SIX known to exist. Read that again. This isn't rare; it's a statistical anomaly. The gourd is a Daoist symbol of immortality, commissioned by an Emperor obsessed with the divine. This bottle wasn't just for show; it was a spiritual weapon, a vessel for elixirs, a flex of cosmic proportions. Holding its Digital Twin is owning a piece of that myth.</p>
                     </div>
                 </div>
             </div>
@@ -146,25 +151,21 @@
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <span class="text-fuchsia-500 font-semibold">THE MASCOT</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">JIN, The AI Historian</h2>
-                    <p class="mt-4 text-lg text-gray-400">Our movement is led by the JIN Robot. But JIN is more than a mascot. It is an AI historian, a digital oracle with a singular focus: the Northern Song Dynasty (960-1127 AD), the era when the legendary Ru Kilns operated.</p>
-                     <p class="mt-4 text-lg text-gray-400">JIN's mission is to educate the community and articulate the immense cultural value of our relics. When JIN speaks, you listen.</p>
+                    <span class="brand-violet font-semibold">THE EMPEROR</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">The Artist Emperor, Huizong</h2>
+                    <p class="mt-4 text-lg text-gray-400">Forget your anonymous devs. Our founder is Emperor Huizong. A calligrapher, a painter, a musician, and a ruthless degen who blew the imperial treasury on the most beautiful art the world had ever seen. He didn't just rule a dynasty; he curated it. We are the guardians of his legacy, and $HUIZONG is the token of his new, digital empire.</p>
                 </div>
                 <div class="md:w-1/2 flex justify-center items-center p-8">
-                    <div class="max-w-sm">
+                    <div class="max-w-xs">
                         <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                          <defs>
-                            <filter id="intense-glow-jin" x="-100%" y="-100%" width="300%" height="300%">
-                              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                              <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                              </feMerge>
-                            </filter>
-                          </defs>
-                          <circle cx="50" cy="50" r="45" fill="#121212" stroke="#c026d3" stroke-width="4" />
-                          <rect x="20" y="47" width="60" height="6" rx="3" fill="#c026d3" filter="url(#intense-glow-jin)" />
+                          <circle cx="50" cy="50" r="48" fill="#1A1A1A" stroke="#A78BFA" stroke-width="2.5" />
+                          <text x="50" y="62" 
+                                font-family="serif, 'KaiTi', 'STKaiti'" 
+                                font-size="40" 
+                                fill="#F5F5F5" 
+                                text-anchor="middle">
+                            徽宗
+                          </text>
                         </svg>
                     </div>
                 </div>
@@ -174,20 +175,20 @@
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl md:text-5xl font-bold font-display">"The Emperor's Favor"</h2>
-                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">A cultural event to honor our first believers. This is not a financial incentive.</p>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Your Ticket to the Imperial Court. This is not a financial incentive. It's a cultural event to honor the OGs.</p>
                 <div class="mt-8 glass-card p-8 rounded-2xl max-w-3xl mx-auto">
-                    <p class="text-lg text-white">The first 500 unique wallets to buy $RU on Pump.fun will be immortalized as our "Founding Collectors."</p>
-                    <p class="mt-4 text-gray-400">These 500 wallets will be airdropped a special, non-transferable "Founding Collector's Shard" NFT from the Ru Kiln Washer's Digital Twin. Diamond Hand holders will receive a second airdrop from the even rarer Gourd Bottle's Digital Twin.</p>
+                    <p class="text-lg text-white">The first 500 unique wallets to buy $HUIZONG on Pump.fun become the "Founding Collectors." This is a speed run. The slots will fill fast.</p>
+                    <p class="mt-4 text-gray-400">Winners get a "Collector's Shard" NFT. Hold your shard and all your initial $HUIZONG for 30 days for a second, even rarer shard from the Gourd Bottle's Digital Twin. This is the ultimate flex.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-white/10 mt-20">
+    <footer class="border-t border-gray-800 mt-20">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
-            <p>&copy; 2025 RU. All rights reserved.</p>
-            <p class="text-sm mt-2">$RU is a meme coin with no intrinsic value or expectation of financial return. It is for entertainment purposes only.</p>
+            <p>&copy; 2025 HUIZONG. All rights reserved.</p>
+            <p class="text-sm mt-2">$HUIZONG is a meme coin with no intrinsic value or expectation of financial return. For entertainment purposes only.</p>
         </div>
     </footer>
 
