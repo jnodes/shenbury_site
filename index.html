@@ -73,6 +73,10 @@
         .bg-brand-violet { background-color: #A78BFA; }
         .hover\:bg-brand-violet-dark:hover { background-color: #8b72d8; }
         .text-shadow-glow { text-shadow: 0 0 15px rgba(167, 139, 250, 0.6); }
+        .social-icon:hover {
+            color: #A78BFA;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -182,11 +186,43 @@
                 </div>
             </div>
         </section>
+        
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display">The Dynasty's Decree</h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold font-display text-white">Phase I: The Launch</h3>
+                        <p class="mt-2 brand-violet font-semibold">Q3 2025</p>
+                        <p class="mt-4 text-gray-400">Execution of the Pump.fun fair launch and establishment of the "Founding Collectors" through the Emperor's Favor airdrop.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold font-display text-white">Phase II: Community Power</h3>
+                        <p class="mt-2 brand-violet font-semibold">Post-Launch</p>
+                        <p class="mt-4 text-gray-400">The dynasty expands as the community of collectors and degens grows, aiming to trend on PumpSwap and major Solana tracking sites.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
     <footer class="border-t border-gray-800 mt-20">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://x.com/huizongmeme" target="_blank" class="social-icon transition-transform duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+                <a href="https://t.me/huizongmeme" target="_blank" class="social-icon transition-transform duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg>
+                </a>
+            </div>
             <p>&copy; 2025 HUIZONG. All rights reserved.</p>
             <p class="text-sm mt-2">$HUIZONG is a meme coin with no intrinsic value or expectation of financial return. For entertainment purposes only.</p>
         </div>

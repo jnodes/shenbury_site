@@ -73,6 +73,10 @@
         .bg-brand-violet { background-color: #A78BFA; }
         .hover\:bg-brand-violet-dark:hover { background-color: #8b72d8; }
         .text-shadow-glow { text-shadow: 0 0 15px rgba(167, 139, 250, 0.6); }
+        .social-icon:hover {
+            color: #A78BFA;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -182,11 +186,43 @@
                 </div>
             </div>
         </section>
+        
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display">王朝的法令</h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold font-display text-white">第一阶段：启动</h3>
+                        <p class="mt-2 brand-violet font-semibold">2025年第三季度</p>
+                        <p class="mt-4 text-gray-400">在Pump.fun成功执行公平启动，并通过“皇帝的恩惠”空投确立“创始收藏家”。</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold font-display text-white">第二阶段：社区力量</h3>
+                        <p class="mt-2 brand-violet font-semibold">启动后</p>
+                        <p class="mt-4 text-gray-400">随着收藏家和堕落者社区的壮大，王朝得以扩张，目标是在PumpSwap和各大Solana追踪网站上成为热门。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
     <footer class="border-t border-gray-800 mt-20">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://x.com/huizongmeme" target="_blank" class="social-icon transition-transform duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+                <a href="https://t.me/huizongmeme" target="_blank" class="social-icon transition-transform duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg>
+                </a>
+            </div>
             <p>&copy; 2025 HUIZONG. 保留所有权利。</p>
             <p class="text-sm mt-2">$HUIZONG是一种模因币，没有内在价值或财务回报的期望。仅供娱乐。</p>
         </div>
