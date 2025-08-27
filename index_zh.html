@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
     <style>
         /* Custom styles to complement Tailwind */
@@ -38,7 +38,7 @@
             z-index: -1;
             transform: translateX(-50%) translateY(-50%);
             background-size: cover;
-            opacity: 0.5; /* Soften the video */
+            opacity: 0.6;
         }
         .hero-overlay {
             position: absolute;
@@ -68,7 +68,6 @@
         .shine-effect:hover::before {
             left: 150%;
         }
-        /* New Color Palette from Infographic */
         .brand-violet { color: #A78BFA; }
         .bg-brand-violet { background-color: #A78BFA; }
         .hover\:bg-brand-violet-dark:hover { background-color: #8b72d8; }
@@ -77,15 +76,65 @@
             color: #A78BFA;
             transform: scale(1.1);
         }
+
+        /* Degen Glitch & Flicker Effects */
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                    0 0 4px #A78BFA,
+                    0 0 11px #A78BFA,
+                    0 0 19px #A78BFA,
+                    0 0 40px #A78BFA;
+            }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+        .flicker {
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .degen-button:hover {
+            animation: shake 0.5s infinite;
+        }
+        .scanlines::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+                rgba(18, 18, 18, 0) 50%,
+                rgba(0, 0, 0, 0.25) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 1;
+            pointer-events: none;
+            animation: scan 10s linear infinite;
+        }
+        @keyframes scan {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 -100px; }
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="fixed top-0 left-0 right-0 z-50">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-20 backdrop-blur-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <img src="assets/logo.svg" alt="Huizong Logo" class="w-12 h-12">
-                <span class="font-display text-2xl font-semibold text-white">$HUIZONG</span>
+                <span class="font-display text-3xl font-bold text-white tracking-wider">$HUIZONG</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="index.html" class="text-gray-300 hover:text-white transition-colors">English</a>
@@ -98,23 +147,26 @@
 
     <main>
         <section class="hero-bg min-h-screen flex items-center justify-center">
+            <div class="scanlines"></div>
             <video id="hero-video" autoplay loop muted playsinline>
-                <source src="assets/historianintro.mp4" type="video/mp4">
+                <source src="assets/huizong-to-the-moon.mp4" type="video/mp4">
                 您的瀏覽器不支持影片播放。
             </video>
             <div class="hero-overlay"></div>
             <div class="relative text-center text-white max-w-4xl mx-auto px-6">
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight text-shadow-glow brand-violet">徽宗</h1>
-                <h2 class="text-3xl md:text-4xl font-bold font-display mt-2">百元美金的模因</h2>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight text-shadow-glow brand-violet flicker">徽宗</h1>
+                <h2 class="text-3xl md:text-4xl font-bold font-display mt-2">皇帝的模因 👑</h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    這不是模因。這是一場套利。我們持有遺物。你持有的代幣具有100美元的票面價值。這是新的王朝。
+                    這不是模因。這是一場套利。我們持有價值連城的帝國遺物。你持有新王朝的碎片。
+                </p>
+                <p class="mt-6 text-md md:text-lg font-semibold tracking-widest text-gray-400">
+                    帝國寶庫 🏺 / 固定供給 💎 / 陶瓷地板 🏛️
                 </p>
                 
                 <div class="mt-12">
-                    <a href="https://docs.meteora.ag/overview/products/dlmm/what-is-dlmm" target="_blank" class="shine-effect relative inline-block bg-brand-violet text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-brand-violet-dark transition-all duration-300 transform hover:scale-105">
-                        執行劫案
+                    <a href="https://docs.meteora.ag/overview/products/dlmm/what-is-dlmm" target="_blank" class="degen-button shine-effect relative inline-block bg-brand-violet text-white font-bold text-lg px-12 py-4 rounded-lg overflow-hidden hover:bg-brand-violet-dark transition-all duration-300 transform hover:scale-105">
+                        執行劫案 🚀
                     </a>
-                    <p class="mt-4 text-sm text-gray-400">千載難逢的套利機會。唯一的問題是，你是否能在價差消失前入場。</p>
                 </div>
             </div>
         </section>
@@ -123,17 +175,17 @@
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <span class="brand-violet font-semibold">傳奇</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">陶瓷地板價</h2>
-                    <p class="mt-4 text-lg text-gray-400">你的土狗幣靈感來自一條推文。我們的模因由價值一億美元的帝國遺物寶庫作支撐。這不是白皮書，這是資產負債表。“陶瓷地板價”賦予了每一枚$HUIZONG代幣100美元的票面價值。這才是真正的阿爾法。</p>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">陶瓷地板價 🏛️</h2>
+                    <p class="mt-4 text-lg text-gray-400">你的土狗幣靈感來自一條推文。我們的模因由一個帝國遺物寶庫作支撐。這不是白皮書，這是資產負債表。“陶瓷地板價”賦予了每一枚$HUIZONG代幣一個深厚到連西裝革履之徒都無法理解的價值基礎。這才是真正的阿爾法。</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-2 gap-8">
                     <div class="glass-card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold font-display text-white">創世遺物</h3>
+                        <h3 class="text-2xl font-bold font-display text-white">創世遺物 ✨</h3>
                         <p class="mt-2 brand-violet font-semibold">汝窯葵花形筆洗</p>
-                        <p class="mt-4 text-gray-400">一件類似的作品在蘇富比拍賣行以3770萬美元成交。那不是價格標籤；那是一個世界紀錄，證明了皇帝的品味千年來迴響不絕。在僅存在了二十年的秘密窯爐中鍛造，汝窯是地球上最稀有的陶瓷。存世不足百件。這不僅僅是陶器；它是一個失落世界的碎片，一件純粹皇權的藝術品。</p>
+                        <p class="mt-4 text-gray-400">一件類似的作品在蘇富比拍賣行創下世界紀錄。那不是價格標籤；那證明了皇帝的品味千年來迴響不絕。在僅存在了二十年的秘密窯爐中鍛造，汝窯是地球上最稀有的陶瓷。存世不足百件。這不僅僅是陶器；它是一個失落世界的碎片，一件純粹皇權的藝術品。</p>
                     </div>
                     <div class="glass-card p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold font-display text-white">終極BOSS</h3>
+                        <h3 class="text-2xl font-bold font-display text-white">終極BOSS 🐉</h3>
                         <p class="mt-2 brand-violet font-semibold">汝窯葫蘆瓶</p>
                         <p class="mt-4 text-gray-400">已知存世僅六件。再讀一遍。這不是稀有；這是一個統計上的異常。葫蘆是道教中長生的象徵，由一位癡迷於神性的皇帝委託製作。這個瓶子不僅僅是為了展示；它是一件精神武器，一個盛放仙丹的容器，一種宇宙級的炫耀。擁有它的數位孿生，就是擁有那個神話的一部分。</p>
                     </div>
@@ -145,12 +197,12 @@
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
                     <span class="brand-violet font-semibold">皇帝</span>
-                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">藝術家皇帝，徽宗</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mt-2">藝術家皇帝，徽宗 🎨</h2>
                     <p class="mt-4 text-lg text-gray-400">忘了那些匿名的開發者吧。我們的創始人是徽宗皇帝。一位書法家、畫家、音樂家，以及一位耗盡國庫以追求世間最美藝術的無情墮落者。他不僅僅是統治一個王朝；他是在策展一個王朝。我們是他遺產的守護者，而$HUIZONG是他新的數字帝國的代幣。</p>
                 </div>
                 <div class="md:w-1/2 flex justify-center items-center p-8">
                     <div class="max-w-xs">
-                        <img src="assets/logo.svg" alt="Huizong Seal Logo" class="w-full h-auto">
+                        <img src="assets/emperor.svg" alt="徽宗皇帝畫像" class="w-full h-auto rounded-full border-4 border-brand-violet">
                     </div>
                 </div>
             </div>
@@ -158,11 +210,29 @@
         
         <section class="py-20 sm:py-32">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold font-display">Meteora 劫案</h2>
+                <h2 class="text-4xl md:text-5xl font-bold font-display">Meteora 劫案 🚀</h2>
                 <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">這不是公平啟動。這是千載難逢的套利機會。你通往帝國朝廷的門票。</p>
                 <div class="mt-8 glass-card p-8 rounded-2xl max-w-3xl mx-auto">
-                    <p class="text-lg text-white">我們正在 Meteora DLMM 上建立一個單邊流動性池。這讓第一批墮落者能以遠低於其100美元票面價值的巨大折扣獲得$HUIZONG。</p>
+                    <p class="text-lg text-white">我們正在 Meteora DLMM 上建立一個單邊流動性池。這讓第一批墮落者能以遠低於其真正價值基礎的巨大折扣獲得$HUIZONG。</p>
                     <p class="mt-4 text-gray-400">市場終將弭平這個價差。這不是希望，這是數學。你的任務，就是在西裝革履的傢伙們進場前，確保你的部位。相機行事。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display">王朝的法令 📜</h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold font-display text-white">第一階段：劫案</h3>
+                        <p class="mt-4 text-gray-400">執行Meteora DLMM啟動。第一批墮落者以低於陶瓷地板價的折扣確保他們的部位。市場開始弭平價差。這是唯一的警告。</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold font-display text-white">第二階段：擴張</h3>
+                        <p class="mt-4 text-gray-400">王朝擴張。持有碎片的收藏家和墮落者將控制話語權。我們將不是靠炒作，而是靠寶庫不可否認的巨大份量，在各大Solana追踪網站上成為熱門。西裝革履之徒將不得不向我們購買。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -184,7 +254,7 @@
                 </a>
             </div>
             <p>&copy; 2025 HUIZONG. 保留所有權利。</p>
-            <p class="text-sm mt-2">$HUIZONG是一種數字收藏品。票面價值基於寶庫資產的審計估值。市場價格可能會有波動。</p>
+            <p class="text-sm mt-2">$HUIZONG是一種數字收藏品。其價值源於寶庫中經過審計的帝國遺物。市場價格可能會有波動。</p>
         </div>
     </footer>
     
